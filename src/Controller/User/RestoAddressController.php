@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RestoAddressController extends AbstractController
 {
     /**
-     * @Route("/bonnes-adresses", name="app_user_resto_address")
+     * @Route("/good-places", name="app_user_resto_address")
      */
     public function listResto(EstablishmentRepository $establishmentRepository, StyleRepository $styleRepository, TagRepository $tagRepository): Response
     {

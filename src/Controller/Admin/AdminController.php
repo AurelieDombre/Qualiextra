@@ -46,7 +46,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/bonnes-adresses", name="app_admin_establishment_new", methods={"GET", "POST"})
+     * @Route("/good-places", name="app_admin_establishment_new", methods={"GET", "POST"})
      */
     public function addResto(Request $request, EstablishmentRepository $establishmentRepository, Geocodage $geocodage): Response
     {
@@ -78,7 +78,7 @@ class AdminController extends AbstractController
 
 
     /**
-     * @Route("/bonnes-adresses/{id}", name="app_admin_establishment_edit", methods={"GET", "POST"}, requirements={"id"="\d+"})
+     * @Route("/good-places/{id}", name="app_admin_establishment_edit", methods={"GET", "POST"}, requirements={"id"="\d+"})
      */
     public function updateResto(Request $request, Establishment $establishment, EstablishmentRepository $establishmentRepository,  Geocodage $geocodage): Response
     {
@@ -108,7 +108,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/bonnes-adresses/delete/{id}", name="app_admin_establishment_delete", methods={"POST"}, requirements={"id"="\d+"})
+     * @Route("/good-places/delete/{id}", name="app_admin_establishment_delete", methods={"POST"}, requirements={"id"="\d+"})
      */
     public function deleteResto(Request $request, Establishment $establishment, EstablishmentRepository $establishmentRepository): Response
     {
