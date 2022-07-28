@@ -23,7 +23,7 @@ class MainController extends AbstractController
 
         /** @var \App\Entity\User $user */
         $user = $this->getUser();
-        $books= null;
+      
         if ($user !== null) {
             // Get user booking with user Id
             $books = $bookRepository->findByUser($user);
