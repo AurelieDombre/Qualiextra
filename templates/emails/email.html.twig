@@ -1,7 +1,12 @@
 
+<h1>Nouvelle réservation</h1>
 
-<h1>Nouveau contact</h1>
-<p>Nom : {{user.Lastname}}</p>
-<p>Prénom : {{user.firstname}}</p>
-<p>e-mail : {{user.email}}</p>
-<p>Message : {{user.message|raw}}</p>
+<p>Nom : {{app.user.Lastname}}</p>
+<p>e-mail : {{app.user.email}}</p>
+
+<p>Prix du package  : {{book.price}}</p>
+
+<p>Nom du package  : {{package.name}}</p>
+
+
+<p>Date de réservation : {{book.date|date('d-m-Y')}}</p>
