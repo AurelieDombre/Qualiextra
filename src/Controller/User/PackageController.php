@@ -56,17 +56,17 @@ class PackageController extends AbstractController
             
             $bookRepository->add($book, true);
 
-            $email = (new Email())
-            ->from('hello@example.com')
-            ->to('projet.qualiextra@gmail.com')
-            // ->cc($establishment)
-            ->subject('Nouvelle réservation')
-                // On crée le texte avec la vue
-            ->html( $this->renderView('emails/email.html.twig', compact('book', 'package'),'text/html'))
-            ;
-            //dd($email);
+            // $email = (new Email())
+            // ->from('hello@example.com')
+            // ->to('projet.qualiextra@gmail.com')
+            // // ->cc($establishment)
+            // ->subject('Nouvelle réservation')
+            //     // On crée le texte avec la vue
+            // ->html( $this->renderView('emails/email.html.twig', compact('book', 'package'),'text/html'))
+            // ;
+            // //dd($email);
 
-            $mailer->send($email);
+            // $mailer->send($email);
 
             //Flash Message pour le client
             $this->addFlash('success', 'Votre réservation est en cours de confirmation.');
