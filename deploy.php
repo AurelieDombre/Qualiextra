@@ -10,7 +10,7 @@ set('composer_options', '--verbose --prefer-dist --no-progress --no-interaction 
 // ---------------------------------------------------------------------------
 // Paramètres de notre application
 // ---------------------------------------------------------------------------
-set("env_database","mysql://curie_admin:curie_Admin@127.0.0.1:3306/qualiextra?serverVersion=mariadb-10.3.34");
+set("env_database","mysql://CurieSeb:JhhD7Dr4@127.0.0.1:3306/qualiextra?serverVersion=mariadb-10.3.34");
 // ---------------------------------------------------------------------------
 // Paramètres de connexion au serveur distant
 // ---------------------------------------------------------------------------
@@ -25,7 +25,7 @@ set("env_database","mysql://curie_admin:curie_Admin@127.0.0.1:3306/qualiextra?se
 // Adresse du serveur distant (adresse IP ou DNS public)
 // set('remote_server_url','adresse_ip_ou_dns_public_du_serveur');
 // TODO 
-set('remote_server_url','piedagnellaura-server.cloud');
+set('remote_server_url','http://sebastienjeandel-server.cloud');
 // Nom du compte utilisateur sur le serveur distant/
 // C'est cet utilisateur qui exécutera les commandes distantes.
 // set('remote_server_user','nom_utilisateur_distant');
