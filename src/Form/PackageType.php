@@ -34,23 +34,29 @@ class PackageType extends AbstractType
                 'label' => 'Nom du package',
             ])
 
-            // ->add('galleries', FileType::class, [
-            //     'label' => 'Ajoutez vos images pour le caroussel',
-            //     'multiple' => true,
-            //     'mapped' => false,
-            //     'required' => false,
-            //     'help' => 'Ajoutez minimum deux images'
-            // ])
-            
-           ->add('galleries', CollectionType::class, [
-            'label' => 'Ajoutez vos images pour le caroussel',
-                // each entry in the array will be an "File" field
-                'entry_type' => FileType::class,
-                // these options are passed to each "File" type
-                'entry_options' => [
-                    'attr' => ['class' => 'galleries'],
-                ],
+            ->add('galleries', FileType::class, [
+                'label' => 'Ajoutez vos images pour le caroussel',
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false,
+                'help' => 'Ajoutez minimum deux images'
             ])
+            
+        //    ->add('galleries', CollectionType::class, [
+        //     'label' => 'Ajoutez vos images pour le caroussel',
+        //     'help' => 'Ajoutez minimum deux images',
+        //         // each entry in the array will be an "File" field
+        //         'entry_type' => FileType::class,
+        //         // these options are passed to each "File" type
+        //         'entry_options' => [
+                    
+        //             'attr' => ['class' => 'galleries',
+        //                         'multiple' => true,
+        //                         'mapped' => false,
+        //                         'required' => false,
+        //                         ],
+        //         ],
+        //     ])
 
 
             ->add('price', NumberType::class, [
