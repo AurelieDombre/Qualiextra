@@ -39,18 +39,8 @@ class PackageType extends AbstractType
                 'multiple' => true,
                 'mapped' => false,
                 'required' => false,
-                'help' => 'Ajoutez minimum deux images'
+                'help' => 'Ajoutez minimum deux images',
             ])
-            
-        //    ->add('galleries', CollectionType::class, [
-        //         // each entry in the array will be an "File" field
-        //         'entry_type' => FileType::class,
-        //         // these options are passed to each "File" type
-        //         'entry_options' => [
-        //             'attr' => ['class' => 'galleries'],
-        //         ],
-        //     ])
-
 
             ->add('price', NumberType::class, [
                 'label' => 'Prix du package',
@@ -64,7 +54,7 @@ class PackageType extends AbstractType
                 'label' => 'Date de validité du package',
                 'required' => false,
                 'widget'   => 'single_text',
-              
+
             ])
 
             ->add('types', EntityType::class, [
