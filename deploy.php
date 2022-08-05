@@ -152,7 +152,7 @@ task('first_deploy', [
     // on écrit notre fichier .env.local
     'init:config:write:prod',
 
-   
+
     // https://deployer.org/docs/7.x/recipe/common#deploypublish
     'deploy:publish'
 ]);
