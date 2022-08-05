@@ -1,30 +1,30 @@
 <header>
    
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <nav class="navbar navbar-expand-lg nav-color">
             <div class="container-fluid">
                 <a href="{{path("app_user_home")}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
                     <img src="{{asset('asset/logo/logo.svg')}}" alt="" width="30" height="24" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon navbar-toggler-color"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{path("app_admin_home")}}">Accueil</a>
+                        <li class="nav-item nav-space">
+                            <a class="nav-lien active" href="{{path("app_admin_home")}}">Accueil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{path("app_admin_pro_new")}}">Ajouter un prestataire</a>
+                        <li class="nav-item nav-space">
+                            <a class="nav-lien active" href="{{path("app_admin_pro_new")}}">Ajouter un prestataire</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{path("app_admin_establishment_new")}}">Ajouter un établissement</a>
+                        <li class="nav-item nav-space">
+                            <a class="nav-lien active" href="{{path("app_admin_establishment_new")}}">Ajouter un établissement</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                         <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                                <a class="nav-lien dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown">
                                     <span>Bonjour  {{app.user.firstname ?? "Mme/Mr"}} {{app.user.lastname}} </span>
                                     <i class="bi bi-person-square"></i>

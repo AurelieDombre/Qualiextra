@@ -67,6 +67,10 @@
     .filtre {
         display: none;
     }
+
+    .fixed-title {
+        font-size: 4em; 
+    }
 }
 
 

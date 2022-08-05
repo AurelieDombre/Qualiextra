@@ -7,54 +7,53 @@
 {% include "Pro/partials/header.html.twig" %}
 
 <main class="container-fluid">
-		<h1 class="title">Mes packages</h1>
+  <div class="contenu">
+      <h1 class="title">Mes packages</h1>
 
-		<div class="title-establishment">
-			<a class="add-btn button from-center" href="{{ path('app_pro_new_package') }}">Ajouter</a>
-		</div>
+      <div class="title-establishment">
+        <a class="add-btn button from-center" href="{{ path('app_pro_new_package') }}">Ajouter</a>
+      </div>
 
 
-{% for establishment in establishmentList %}
-  {% if establishment.getPackages() is not empty %}
-  <div class="bloc-establishment">
-    <h2 class="head-list-establishment title-secondary">{{establishment.name}}</h2>
+    {% for establishment in establishmentList %}
+      {% if establishment.getPackages() is not empty %}
+        <div class="bloc-establishment">
+          <h2 class="head-list-establishment title-secondary">{{establishment.name}}</h2>
 
-    <table class="table table-hover mt-4">
+          <table class="table table-hover mt-4">
 
-      <thead>
-        <tr>
-          <th scope="col">Nom du package</th>
-          <th scope="col">Prix</th>
-        </tr>
-      </thead>
-      {% for package in establishment.getPackages() %}
+            <thead>
+              <tr>
+                <th scope="col">Nom du package</th>
+                <th scope="col">Prix</th>
+              </tr>
+            </thead>
+            {% for package in establishment.getPackages() %}
 
-      <tbody>
-      
-        <tr>
-          <th scope="row" class="bloc-package">{{package.name}}</th>
-          <td>{{package.price}} €</td>
-          <td class="bloc-icon-package">
-            <a href="{{path('app_pro_update_package',{id:package.id})}}" class="btn btn-sm edit_btn" role="button"><i class="fa fa-pencil-square-o"></i></a>
+            <tbody>
             
-            <form method="post" action="{{ path('app_pro_delete_package', {'id': package.id}) }}" onsubmit="return confirm('Souhaitez-vous supprimer ce package ?');">
-              <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ package.id) }}">
-              <button class="btn btn-sm delete_btn"><i class="fa fa-trash-o"></i></button>
-          </form>
-
-            
-          </td>
-        </tr>
-
-      </tbody> 
-        
-      {% endfor %}
-    </table>
+              <tr>
+                <th scope="row" class="bloc-package">{{package.name}}</th>
+                <td>{{package.price}} €</td>
+                <td class="bloc-icon-package">
+                  <a href="{{path('app_pro_update_package',{id:package.id})}}" class="btn btn-sm edit_btn" role="button"><i class="fa fa-pencil-square-o"></i></a>
+                  
+                  <form method="post" action="{{ path('app_pro_delete_package', {'id': package.id}) }}" onsubmit="return confirm('Souhaitez-vous supprimer ce package ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ package.id) }}">
+                    <button class="btn btn-sm delete_btn"><i class="fa fa-trash-o"></i></button>
+                </form>
+                  
+                </td>
+              </tr>
+            </tbody> 
+              
+            {% endfor %}
+          </table>
+        </div>
+        {% endif %}
+      {% endfor %}  
+    </div>
   </div>
-  {% endif %}
-{% endfor %}
-</div>
-
 {% include "Pro/partials/footer.html.twig" %}
 
 
