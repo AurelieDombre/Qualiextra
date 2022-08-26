@@ -7,53 +7,56 @@
 	{% include "Pro/partials/header.html.twig" %}
 
 	<main class="container-fluid">
-		<h1 class="title">Liste de vos établissements</h1>
+				<div class="contenu">
+			<h1 class="title">Liste de vos établissements</h1>
 
-		<div class="title-establishment">
-			<a class="add-btn button from-center" href="{{ path('app_pro_new_establishment') }}">Ajouter</a>
+			<div class="title-establishment">
+				<a class="add-btn button from-center" href="{{ path('app_pro_new_establishment') }}">Ajouter</a>
+			</div>
+			<table class="table table-hover mt-4">
+				<thead class="head-list-establishment">
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Adresse</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody >
+
+					{% for establishment in establishments %}
+
+						<tr>
+							<td>{{ establishment.name }}</td>
+							<td>{{ establishment.address }}</td>
+
+							<td class="text-end">
+								<a href="{{ path('app_pro_update_establishment', {'id': establishment.id}) }}" class="btn btn-sm edit_btn">
+									<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+								</a>
+
+								<div class="btn-group">
+									<form method="post" action="{{ path('app_pro_delete_establishment', {'id': establishment.id}) }}" onsubmit="return confirm('Supprimer l\' établissement {{establishment.name}} ?');">
+										<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ establishment.id) }}">
+										<button class="btn btn-sm delete_btn">
+											<i class="fa fa-trash-o" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+
+							</td>
+						</tr>
+
+					{% else %}
+						<tr>
+							<td colspan="14">Pas d'établissement pour l'instant.</td>
+						</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+
 		</div>
-		<table class="table table-hover mt-4">
-			<thead class="head-list-establishment">
-				<tr>
-					<th scope="col">Nom</th>
-					<th scope="col">Adresse</th>
-					<th scope="col"></th>
-				</tr>
-			</thead>
-			<tbody >
-
-				{% for establishment in establishments %}
-
-					<tr>
-						<td>{{ establishment.name }}</td>
-						<td>{{ establishment.address }}</td>
-
-						<td class="text-end">
-							<a href="{{ path('app_pro_update_establishment', {'id': establishment.id}) }}" class="btn btn-sm edit_btn">
-								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-							</a>
-
-							<div class="btn-group">
-								<form method="post" action="{{ path('app_pro_delete_establishment', {'id': establishment.id}) }}" onsubmit="return confirm('Supprimer l\' établissement {{establishment.name}} ?');">
-									<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ establishment.id) }}">
-									<button class="btn btn-sm delete_btn">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-									</button>
-								</form>
-
-							</div>
-
-						</td>
-					</tr>
-
-				{% else %}
-					<tr>
-						<td colspan="14">Pas d'établissement pour l'instant.</td>
-					</tr>
-				{% endfor %}
-
-			</tbody>
-		</table>
 	</main>
 
 	{% include "Pro/partials/footer.html.twig" %}
