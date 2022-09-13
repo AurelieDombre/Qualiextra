@@ -1,6 +1,8 @@
 //Scroll function 
 
 function isScrolledIntoView(el) {
+    //https://developer.mozilla.org/fr/docs/Web/API/Element/getBoundingClientRect
+    //La valeur de retour est un objet DOMRect qui est le plus petit rectangle contenant l'élément en entier, incluant sa zone de remplissage et la largeur de sa bordure. Les propriétés left, top, right, bottom, x, y, width, et height, décrivent la position et la taille du rectangle en pixels. Les propriétés autres que width et height sont relatives au coin en haut à gauche de la zone d'affichage.
     const rect = el.getBoundingClientRect();
     // Top of the section
     const elemTop = rect.top;
