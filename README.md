@@ -7,6 +7,10 @@ Expériences hôtelières (nuitée + activité) ou expériences gustatives (menu
 Ces packages seront accessibles 100% en ligne aux clients depuis une application web.
 La société référence aussi une sélection d’établissements qui ne proposent pas    d’expériences afin de proposer des lieux atypiques aux visiteurs de la plateforme.
 
+![qualiextra-home](https://user-images.githubusercontent.com/99244644/187074745-33022f5b-e2db-41e9-ab3d-28291a74dc87.png)
+
+
+
 ## Installation
 
 Afin d'installer le projet, nous vous proposons de suivre le processus suivant :
@@ -85,3 +89,5 @@ Pour quitter CTRL+x
 
 
 Le projet est okay
+
+
