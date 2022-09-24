@@ -15,20 +15,20 @@
       </div>
 
 
-  {% for establishment in establishmentList %}
-    {% if establishment.getPackages() is not empty %}
-      <div class="bloc-establishment">
-        <h2 class="head-list-establishment title-secondary">{{establishment.name}}</h2>
+      {% for establishment in establishmentList %}
+        {% if establishment.getPackages() is not empty %}
+          <div class="bloc-establishment">
+            <h2 class="head-list-establishment title-secondary">{{establishment.name}}</h2>
 
-        <table class="table table-hover mt-4">
+            <table class="table table-hover mt-4">
 
-          <thead>
-            <tr>
-              <th scope="col">Nom du package</th>
-              <th scope="col">Prix</th>
-            </tr>
-          </thead>
-          {% for package in establishment.getPackages() %}
+              <thead>
+                <tr>
+                  <th scope="col">Nom du package</th>
+                  <th scope="col">Prix</th>
+                </tr>
+              </thead>
+              {% for package in establishment.getPackages() %}
 
           <tbody>
           
@@ -54,8 +54,9 @@
       </div>
       {% endif %}
     {% endfor %}
-    </div>
+    
   </div>
+</main>
 {% include "Pro/partials/footer.html.twig" %}
 
 
