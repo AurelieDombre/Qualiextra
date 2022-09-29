@@ -48,16 +48,14 @@ class PackageController extends AbstractController
             $book->setUser($user);
             $book->setPackages($package);
             $book->setPrice($package->getPrice());
-            
+            // dd($book);
             $bookRepository->add($book, true);
-
 
             //Flash Message for the customer
             $this->addFlash('success', 'Votre réservation est en cours de confirmation.');
 
             return $this->redirectToRoute('app_user_home', [], Response::HTTP_SEE_OTHER);
         }
-
         return $this->renderForm('User/packageShow.html.twig', [
             'package' => $package,
             'form' => $form,

@@ -39,7 +39,6 @@ class AppFixtures extends Fixture
     private function truncate()
     {
         $this->connection->executeQuery('SET foreign_key_checks = 0');
-
         $this->connection->executeQuery('TRUNCATE TABLE book');
         $this->connection->executeQuery('TRUNCATE TABLE establishment');
         $this->connection->executeQuery('TRUNCATE TABLE package');
@@ -48,7 +47,6 @@ class AppFixtures extends Fixture
         $this->connection->executeQuery('TRUNCATE TABLE tag_establishment');
         $this->connection->executeQuery('TRUNCATE TABLE type');
         $this->connection->executeQuery('TRUNCATE TABLE user');
-
         $this->connection->executeQuery('SET foreign_key_checks = 1');
     }
 
@@ -222,13 +220,11 @@ class AppFixtures extends Fixture
             $establishment->setLatitudes($lat);
             $establishment->setLongitudes($long);
 
-
-
             $establishmentsList[] = $establishment;
-
 
             $manager->persist($establishment);
         }
+
         //Packages
         $packagesList = [];
 
@@ -248,10 +244,7 @@ class AppFixtures extends Fixture
                 $package->addType($typesListEntity[mt_rand(0, count($typesListEntity) - 1)]);
             }
 
-
-
             $packagesList[] = $package;
-
 
             $manager->persist($package);
         }
@@ -270,8 +263,6 @@ class AppFixtures extends Fixture
             $manager->persist($book);
         }
 
-       
-        
 
         //# Tag
 
@@ -296,7 +287,6 @@ class AppFixtures extends Fixture
         $tagpiano->setName('piano');
         $tagList[] = $tagpiano;
         $manager->persist($tagpiano);
-       
 
 
         foreach ($establishmentsList as $key => $establishment) {
@@ -317,8 +307,6 @@ class AppFixtures extends Fixture
                 $manager->persist($gallery);
             }
         }
-
-
         
         $manager->flush();
     }

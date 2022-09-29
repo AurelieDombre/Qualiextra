@@ -20,12 +20,8 @@ class BookType extends AbstractType
         $builder
             ->add('date', DateType::class, [
                 'label' => ' ',
-               
                 'widget' => 'single_text',])
 
-            //->add('name', TextType::class)
-            //->add('price', IntegerType::class )
-            //->add('email', EntityType::class, ['class' => User::class])
         ;
     }
 

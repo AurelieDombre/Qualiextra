@@ -37,8 +37,8 @@ security:
 
         
     role_hierarchy:
-           # ADMIN have the same right USER       
-            ROLE_ADMIN : ROLE_USER
+            # ADMIN have the same right USER       
+            ROLE_ADMIN : ROLE_PRO
             # PRO have the same right USER
             ROLE_PRO : ROLE_USER
 

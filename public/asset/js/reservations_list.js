@@ -6,7 +6,7 @@ const reservations_list = {
         const AllreservationsList = document.querySelectorAll('.package-line');
         for(const oneReservation of AllreservationsList){
             oneReservation.classList.add('d-none')
-            // apparence = for block etablishment
+            // apparence = for block establishment
             oneReservation.classList.remove('apparence')
             // packager = for block package
             oneReservation.classList.remove('packager')
@@ -16,6 +16,8 @@ const reservations_list = {
         reservations_list.browseToCheck();
         //we browse the reservations validated
         reservations_list.browseValidated();
+
+
         //we browse the reservation cancelled
         reservations_list.browseCancelled();
         //we hide the package who doesn't have any reservation
@@ -52,7 +54,7 @@ const reservations_list = {
         for(const table of elementsToCheck){
             //we retrieve all the reservations line
             const reservationsList = table.querySelectorAll('.package-line');
-                 
+                
             //we get the status of each reservation and we show these reservation
             for (const reservation of reservationsList){
                 let statusReservation = reservation.dataset.status
@@ -74,21 +76,19 @@ const reservations_list = {
         for(const table of elementsToCheck){
             //we retrieve all the reservations line
             const reservationsList = table.querySelectorAll('.package-line');
-                 
+                
             //we get the status of each reservation and we show these reservation
             for (const reservation of reservationsList){
                 let statusReservation = reservation.dataset.status
-               
+            
                 //we remove the d-none class when the status is validated
                 if (statusReservation == 1){
                     reservation.classList.remove('d-none')
                     reservation.classList.add('apparence')
                     reservation.classList.add('packager')
-
                 }
             }        
         }
-
     },
 
     hidePackage: function(){

@@ -1,81 +1,64 @@
 <header>
 
-			 <nav class="navbar navbar-expand-lg nav-color">
-            <div class="container-fluid">
-                <a href="{{path("app_user_home")}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
-                    <img src="{{asset('asset/logo/logo.svg')}}" alt="" width="30" height="24" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon navbar-toggler-color"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item nav-space">
-                            <a class="nav-lien active" href="{{path("app_user_home")}}">Mes expériences</a>
+    <nav class="navbar navbar-expand-lg nav-color">
+        <div class="container-fluid">
+            <a href="{{path("app_user_home")}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                <img src="{{asset('asset/logo/logo.svg')}}" alt="" width="30" height="24" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon navbar-toggler-color"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item nav-space">
+                        <a class="nav-lien active" href="{{path("app_user_home")}}">Mes expériences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-lien active" href="{{path("app_user_resto_address")}}">Les bonnes adresses</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if app.user == null %}
+                        <a href="{{ path('app_login')}}" class="btn btn-success btn-connection-color">Me Connecter</a>
+                    {% else %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-lien dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                <span>Bonjour {{app.user.firstname ?? "Mme/Mr"}} {{app.user.lastname ?? " "}}</span>
+                                <i class="bi bi-person-square"></i>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-lien active" href="{{path("app_user_resto_address")}}">Les bonnes adresses</a>
-                        </li>
-                        
-                    </ul>
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        
-                           
-                
-                            
-                            {% if app.user == null %}
-                                <a href="{{ path('app_login')}}" class="btn btn-success btn-connection-color">Me Connecter</a>
-                            {% else %}
-                                <li class="nav-item dropdown">
-                                <a class="nav-lien dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown">
-                                    <span>Bonjour {{app.user.firstname ?? "Mme/Mr"}} {{app.user.lastname ?? " "}}</span>
-                                    <i class="bi bi-person-square"></i>
-                                </a>
-                                
-                                <ul class="dropdown-menu">
-                                   
-                                        
-                                    </li>
-                                     {% if app.user.roles[0] == "ROLE_ADMIN" %}
-                                    <li><a class="dropdown-item" href="{{path("app_admin_home")}}">Mon espace</a></li>
-                                    {% endif %} 
-                                    <li><a class="dropdown-item" href="{{path("app_logout")}}">Déconnexion</a></li>
-                                   
-                                    
-                                </ul>
-                            </li>
+                        <ul class="dropdown-menu">
+                            {% if app.user.roles[0] == "ROLE_ADMIN" %}
+                            <li><a class="dropdown-item" href="{{path("app_admin_home")}}">Mon espace</a></li>
                             {% endif %} 
-                            
-
-                    </ul>
-
-                   
-                </div>
+                            <li><a class="dropdown-item" href="{{path("app_logout")}}">Déconnexion</a></li>
+                        </ul>
+                    {% endif %} 
+                </ul>
             </div>
-        </nav>
-		</header>
+        </div>
+    </nav>
+</header>
 
-		{#Add flash message for the customer#}
+{#Add flash message for the customer#}
 
-		{% for label, messages in app.flashes %}
-			{% for message in messages %}
-				{% set explode = label|split(' ') %}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        {% set explode = label|split(' ') %}
 
-				<div class="alert alert-{{label}} alert-dismissible fade show" role="alert">
-					{{ message }}
-					{% if explode[1] is defined %}
-						<a href="{{path("app_user_flash",{'id':explode[1]})}}">
-							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-						</a>
-					{% else %}
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					{% endif %}
+        <div class="alert alert-{{label}} alert-dismissible fade show" role="alert">
+            {{ message }}
+            {% if explode[1] is defined %}
+                <a href="{{path("app_user_flash",{'id':explode[1]})}}">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </a>
+            {% else %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endfor %}
 
-				</div>
-
-			{% endfor %}
-		{% endfor %}
-
-		{#End#}
+{#End#}

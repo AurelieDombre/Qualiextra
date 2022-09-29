@@ -117,7 +117,7 @@ class PackageController extends AbstractController
     /**
     * Browse all the reservation owned by the user
     *
-    * @Route("/business/books", name="app_pro_reservations")
+    * @Route("/business/books", name="app_pro_reservations", methods={"GET"})
     */
     public function showBook ( EstablishmentRepository $establishmentRepository )
     {

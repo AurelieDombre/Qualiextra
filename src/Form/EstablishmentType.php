@@ -22,26 +22,34 @@ class EstablishmentType extends AbstractType
     {
         $builder
             ->add('name', TextType::class,  [
-                'label' => 'Nom de l\'établissement *'])
+                'label' => 'Nom de l\'établissement *'
+            ])
             ->add('address', TextType::class,  [
-                'label' => 'Adresse *'])
+                'label' => 'Adresse *'
+            ])
             ->add('phone', TextType::class,  [
-                'label' => 'Téléphone'])
+                'label' => 'Téléphone'
+            ])
             ->add('email', TextType::class)
             ->add('website', TextType::class,  [
-                'label' => 'Site web'])
+                'label' => 'Site web'
+            ])
             ->add('openingHour', TextType::class,  [
-                'label' => 'Horaires d\'ouverture'])
+                'label' => 'Horaires d\'ouverture'
+            ])
             ->add('openingDay', TextType::class,  [
-                'label' => 'Jours d\'ouverture'])
+                'label' => 'Jours d\'ouverture'
+            ])
             ->add('description', TextareaType::class,  [
-                'label' => 'Description *'])
+                'label' => 'Description *'
+            ])
             ->add('picture', UrlType::class, [
                 'help' => 'Url de l\'image',
                 'label' => 'Photo de l\'établissement'
             ])
             ->add('price',  NumberType::class,  [
-                'label' => 'Prix moyen proposé'])
+                'label' => 'Prix moyen proposé'
+            ])
             ->add('tags', EntityType::class, [
                 'label' => 'Equipement(s)',
                 'choice_label' => 'name',
@@ -64,8 +72,6 @@ class EstablishmentType extends AbstractType
                     ->orderBy('u.lastname', 'ASC');
                 }
             ])
-
-
             ->add('style', EntityType::class, [
                 'label' => 'Style *',
                 'choice_label' => 'name',

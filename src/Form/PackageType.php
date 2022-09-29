@@ -47,8 +47,6 @@ class PackageType extends AbstractType
                 'constraints' => [new NotBlank()]
             ])
             
-
-
             ->add('price', NumberType::class, [
                 'label' => 'Prix du package *',
             ])
@@ -61,7 +59,6 @@ class PackageType extends AbstractType
                 'label' => 'Date de validité du package',
                 'required' => false,
                 'widget'   => 'single_text',
-              
             ])
 
             ->add('types', EntityType::class, [
