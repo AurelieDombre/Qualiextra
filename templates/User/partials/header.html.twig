@@ -28,6 +28,11 @@
                                 <span>Bonjour {{app.user.firstname ?? "Mme/Mr"}} {{app.user.lastname ?? " "}}</span>
                                 <i class="bi bi-person-square"></i>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{{path("app_logout")}}">Déconnexion</a>
+                                </li>
+                            </ul>
                         </li>
                         <ul class="dropdown-menu">
                             {% if app.user.roles[0] == "ROLE_ADMIN" %}

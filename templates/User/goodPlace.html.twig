@@ -14,13 +14,11 @@
 		</div>
 
 		<div class="contener">
-
 			<section class="top-section">
 				<div class="filter-case d-none">
 					<div class="close">
 						<i id="filter-close" class="fa-solid fa-xmark"></i>
 					</div>
-
 					<h3>Filtrer</h3>
 					<div class="filter-checkbox">
 						<div class="select-filter">
@@ -67,8 +65,6 @@
 						<div class="closed">
 							<i id="details-close" class="fa-solid fa-xmark"></i>
 						</div>
-
-
 						<div class="gp-img">
 							<img src="{{establishment.picture}}" class="img-fluid">
 							<h4 class="gp-style-establishment">
@@ -90,7 +86,8 @@
 							{% for package in establishment.getPackages() %}
 
 								<a href="{{path("app_user_package_show",{id:package.id})}}">
-									{{package.name}}</a>
+									{{package.name}}
+								</a>
 							{% endfor %}
 						</div>
 						{% endif %}
@@ -98,22 +95,20 @@
 				{% endfor %}
 				<div class="establishmentList">
 					{% for establishment in listEstablishment %}
-						<a class="establishment" data-long="{{establishment.longitudes}}" data-lat="{{establishment.latitudes}}" data-number="{{establishment.id}}" data-price="{{establishment.price}}" data-name="{% for tag in establishment.getTags() %}{{tag.name}} {% endfor %}{{establishment.style.name}}" href="#">
+						<a class="establishment" data-long="{{establishment.longitudes}}" 
+						data-lat="{{establishment.latitudes}}" data-number="{{establishment.id}}" 
+						data-price="{{establishment.price}}" 
+						data-name="{% for tag in establishment.getTags() %}{{tag.name}} {% endfor %}{{establishment.style.name}}" href="#">
 							<div class="restaurant">
 								<h3>{{establishment.name}}</h3>
 								<p>{{establishment.description}}</p>
 							</div>
 						</a>
 					{% else %}
-
 						<em>Aucun établissement ne correspond à vos recherches</em>
-
 					{% endfor %}
 				</div>
-
-
 			</section>
-
 		</div>
 
 

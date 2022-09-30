@@ -43,7 +43,8 @@ const coordinate = {
                 L.DomUtil.addClass(marker._icon, "markerIcon");
                 L.DomUtil.addClass(marker._icon, establishmentNumber);
 
-                // We add the marker in the array markerList : [], if the marker exist in array we display it but if the marker is not in array so the marker doesn't appeared
+                // We add the marker in the array markerList : [], if the marker exist in array we display it but if the marker 
+                //is not in array so the marker doesn't appeared
                 coordinate.markerList.push(marker); 
             }
         }
