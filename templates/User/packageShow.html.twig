@@ -22,7 +22,8 @@
         </div>
     </section>
 
-    <div class="container--title_package establishment"data-long="{{package.establishment.longitudes}}" data-lat="{{package.establishment.latitudes}}">
+    <div class="container--title_package establishment"
+    data-long="{{package.establishment.longitudes}}" data-lat="{{package.establishment.latitudes}}">
         <h1>{{package.name}}</h1>
     </div>
 
@@ -69,7 +70,6 @@
                 </div>
         </section>
     {% else %}
-
         <div class="bloc-login">
             <p class="bloc-message-book">Vous devez vous connecter pour pouvoir réserver</p>
             <a class="button from-center" href="{{path("app_login")}}">Se connecter</a>

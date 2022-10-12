@@ -22,7 +22,6 @@
             <h3 class='title-book'> # Réservations en attente</h3>
                 {% for establishment in listEstablishment %}
                     {% if establishment.getPackages() is not empty %}
-                    
                     <div class="bloc-establishment ">
                         <h2 class="head-list-establishment title">Etablissement {{establishment.name}}</h2>
                         {% for package in establishment.getPackages() %}
